@@ -9,6 +9,7 @@ def csv_to_ttl(csv_file, ttl_file):
         with open(ttl_file, mode='w') as outfile:
             outfile.write('@prefix myData: <http://example.org/myData/> .\n\n')
 
+            #interation counter is added to check for correct execution of for loop
             i =0
             for row in reader:
                 i += 1
