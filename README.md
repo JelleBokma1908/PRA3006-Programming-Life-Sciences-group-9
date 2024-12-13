@@ -25,4 +25,5 @@
 
 * The final product is named Gene_and_Neurotransmitter_Viewer_htmlcode.html [Gene_and_Neurotransmitter_Viewer_htmlcode.html](Gene_and_Neurotransmitter_Viewer_htmlcode.html)
 * Upon running, make sure it is set up on a different port as the Blazegraph is, eg 5500
-* It can only work successfully in the Chrome tab where security is disabled. In browsers without the cross-origin request will be blocked. 
+* It can only work successfully in the Chrome tab where security is disabled. In browsers without the cross-origin request will be blocked.
+* Ensure that the files [mouse.png](mouse.png), [human.png](human.png), and [Brain_ID_same_names.geojson](Brain_ID_same_names.geojson) are all locally saved in the same directory as [Gene_and_Neurotransmitter_Viewer_htmlcode.html](Gene_and_Neurotransmitter_Viewer_htmlcode.html)
