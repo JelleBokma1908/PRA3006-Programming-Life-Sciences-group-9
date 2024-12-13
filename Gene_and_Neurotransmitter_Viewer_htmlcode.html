@@ -880,8 +880,9 @@ async function renderMap(geojsonData) {
     
 
 //function to fetch GeoJSON data and update the map, it is fetching fromt the github repo
+	//update, fetching didnt seem to be reliable, thus is now changed to local fetching, ensure geojson file is in same directory with correct name
 function updateTPMcomparison() {
-    fetch('https://raw.githubusercontent.com/JelleBokma1908/PRA3006-Programming-Life-Sciences-group-9/refs/heads/main/Brain_ID_same_names.geojson?token=GHSAT0AAAAAAC3PQ64RCI2XBHABBP3DH5XSZ23CAHA')  //ensure the geojson file has same name and update filepath if nessecairy
+    fetch('/Brain_ID_same_names.geojson')  //ensure the geojson file has same name and update filepath if nessecairy
         .then(response => response.json())
         .then(geojsonData => {
             renderMap(geojsonData);
