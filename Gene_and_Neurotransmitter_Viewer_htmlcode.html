@@ -557,6 +557,8 @@ label[for="modeSwitch"] {
 	function scatterDots(brainId, region, numDots, dotSize, highlight, tpm) {
     const brainContainer = document.querySelector(`#${brainId}`).parentElement;
     const center = dotLocations[brainId][region];
+	const containerWidth = brainContainer.offsetWidth;
+	const containerHeight = brainContainer.offsetHeight;
 	
 	 const fragment = document.createDocumentFragment(); 
     const dotElements = [];
@@ -565,11 +567,18 @@ label[for="modeSwitch"] {
     for (let i = 0; i < numDots; i++) {
         const dot = document.createElement('div');
         dot.classList.add('dot');
+	    // Randomize positions around the center
+	const percentX = (center.x / containerWidth) * 100;
+        const percentY = (center.y / containerHeight) * 100;
+
+        // Randomize positions around the center in percentage units
+        const offsetX = (Math.random() - 0.5) * 6; // Adjust randomness as needed
+        const offsetY = (Math.random() - 0.5) * 6;
 
         //randomizing the positions around the center
 
-         dot.style.top = `${center.y}px`;
-        dot.style.left = `${center.x}px`;
+         dot.style.top = `calc(${percentY}% + ${offsetY}%)`;
+        dot.style.left = `calc(${percentX}% + ${offsetX}%)`;
         dot.style.width = `${dotSize}px`;
         dot.style.height = `${dotSize}px`;
         dot.style.borderRadius = '50%';
